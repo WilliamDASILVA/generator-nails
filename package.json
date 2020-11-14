@@ -1,0 +1,19 @@
+{
+  "name": "generator-nails",
+  "version": "1.0.0",
+  "description": "A fullstack Rails + Nuxt (and many more) generator",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "William DA SILVA <william.da.silva@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "yeoman-generator": "^4.12.0"
+  }
+}

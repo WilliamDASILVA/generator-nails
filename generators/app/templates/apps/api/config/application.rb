@@ -33,5 +33,16 @@ module Api
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]
+    config.eager_load_paths += Dir["#{config.root}/lib/**/"]
+
+    config.active_job.queue_adapter = :sidekiq
+
+    Raven.configure do |config|
+      config.dsn = ENV['SENTRY_DSN']
+      config.current_environment = ENV['SENTRY_ENVIRONMENT']
+    end
   end
 end

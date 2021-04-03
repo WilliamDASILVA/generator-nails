@@ -102,4 +102,19 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+  config.action_mailer.smtp_settings = {
+    :address => ENV['SMTP_ADDRESS'],
+    :port => ENV['SMTP_PORT'],
+    :user_name => ENV['SMTP_USER_NAME'],
+    :password => ENV['SMTP_PASSWORD']
+  }
+
+  config.action_controller.default_url_options = {
+    host: ENV['ASSET_HOST']
+  }
+
+  config.action_mailer.default_url_options = {
+    host: ENV['ASSET_HOST']
+  }
 end
